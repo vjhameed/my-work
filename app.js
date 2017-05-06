@@ -5,6 +5,7 @@ const express = require('express');
 var app = express();
 
 //a simple express web server
+var port = process.env.PORT || 3000
 app.set("view engine","ejs");
 app.use(express.static("/public"));
 
@@ -17,4 +18,4 @@ app.get("/",(req,res)=>{
         res.render("index");
 })
 
-app.listen(3000,()=>console.log("server has started"));
+app.listen(port,()=>console.log(`server has started ${port}`));
